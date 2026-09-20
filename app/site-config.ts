@@ -1,8 +1,7 @@
-// Set this to the final public origin before the production build.
-// Leave it unset locally rather than publishing a guessed canonical domain.
-function getSiteUrl(): URL | undefined {
-  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
-  if (!configuredUrl) return undefined;
+const productionSiteUrl = "https://livealoneband.com";
+
+function getSiteUrl(): URL {
+  const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim() || productionSiteUrl;
 
   let url: URL;
   try {

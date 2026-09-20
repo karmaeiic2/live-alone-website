@@ -13,7 +13,7 @@ const bandStructuredData = {
   "@context": "https://schema.org",
   "@type": "MusicGroup",
   name: "Live Alone",
-  url: siteUrl?.href,
+  url: siteUrl.href,
   genre: "Post-hardcore",
   location: {
     "@type": "Place",

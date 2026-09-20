@@ -12,26 +12,25 @@ npm ci
 npm run dev
 ```
 
-Open http://localhost:3000. No environment variables are required locally.
+Open http://localhost:3000. No environment variables are required locally;
+metadata defaults to the confirmed production domain.
 
 ## Production URL and deployment
 
-The final domain has not been supplied. Before deploying, set
-`NEXT_PUBLIC_SITE_URL` to the actual public website origin, including `https://`,
-in the hosting provider's environment settings **before running the build**.
-Use the chosen canonical domain, with no path, query, or fragment.
-For a local production build, copy `.env.example` to `.env.local` and fill it in.
+The confirmed canonical domain is `https://livealoneband.com`. The shared site
+configuration uses this value by default. Set
+`NEXT_PUBLIC_SITE_URL=https://livealoneband.com` in the hosting provider's
+production environment before running the build so the deployment setting is
+explicit. For a local production build, `.env.example` contains the same value.
 
 `app/site-config.ts` validates this one setting. It supplies the metadata base,
 canonical URL, Open Graph URL and social image URLs, MusicGroup website URL,
 homepage sitemap entry, and the sitemap reference in robots.txt. These routes
 and metadata are generated at build time; changing the domain requires a rebuild.
 
-When the setting is empty, development and builds still work, but
-domain-dependent tags (including social image URLs) are omitted, the sitemap
-has no entries, and robots.txt has no sitemap reference. This avoids publishing
-a guessed domain or localhost. **Set the URL and rebuild before launch.**
-The site allows indexing; use your host's access controls for private previews.
+When the environment variable is absent, development and builds use the same
+confirmed apex domain as a fallback. The site allows indexing; use your host's
+access controls for private previews.
 
 Run the checks and production server with:
 
