@@ -84,7 +84,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   letter-spacing: .05em;
 }
 
-/* The actual film thumbnail is the opening. The existing player still loads on demand. */
+/* The local film loop is the opening. The existing player still loads on demand. */
 .video-frame {
   --hero-fade-duration: 400ms;
   position: relative;
@@ -144,6 +144,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   object-fit: cover;
   object-position: 52% center;
   transform: scale(1.6);
+}
+.hero-background-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 52% center;
+  transform: scale(1.6);
+  pointer-events: none;
 }
 .video-trigger::after {
   content: "";
@@ -514,6 +524,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   html { scroll-behavior: auto; }
   .video-frame { --hero-fade-duration: 0ms; }
   .video-trigger, .video-player-host { transition: none; }
+  .hero-background-video { display: none; }
   .reactive-logo canvas { display: none; }
   .interlude-pause { display: none !important; }
 }

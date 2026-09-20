@@ -182,6 +182,25 @@ export function VideoPlayer() {
               preload
               sizes="100vw"
             />
+            <video
+              className="hero-background-video"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/images/but-i-dont-video.jpg"
+              width={1920}
+              height={1080}
+              aria-hidden="true"
+              tabIndex={-1}
+            >
+              <source
+                src="/videos/live-alone-hero-loop.mp4"
+                type="video/mp4"
+                media="(prefers-reduced-motion: no-preference)"
+              />
+            </video>
           </span>
           <Image
             className="opening-logo"
