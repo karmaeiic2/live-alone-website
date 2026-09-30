@@ -4,6 +4,7 @@ import { SiteHeader } from "./site-header";
 import { VideoPlayer } from "./video-player";
 import { PhotoInterlude } from "./photo-interlude";
 import { siteUrl } from "./site-config";
+import { ShowsSection } from "./shows-section";
 
 const youtubeUrl = "https://youtu.be/Dv1cypUiLAk";
 const spotifyAlbumUrl = "https://open.spotify.com/album/3pRTRGUoTPmeQRcoW6BTR8";
@@ -67,47 +68,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="shows" className="shows" aria-labelledby="shows-title" tabIndex={-1}>
-          <h2 id="shows-title">Shows</h2>
-          <article className="show-listing" aria-labelledby="show-name">
-            <div className="show-info">
-              <time className="show-date" dateTime="2026-10-04">October 4</time>
-              <h3 id="show-name">Bug House PDX house show</h3>
-              <ul className="show-lineup" aria-label="Show lineup">
-                <li>Live Alone</li>
-                <li>Lazer Beam (SF)</li>
-                <li>IC Double</li>
-                <li>Warped Lines</li>
-              </ul>
-              <dl className="show-details">
-                <div><dt>Doors</dt><dd>6:00 PM</dd></div>
-                <div><dt>Music</dt><dd>7:00 PM</dd></div>
-                <div><dt>Ages</dt><dd>21+</dd></div>
-                <div><dt>Price</dt><dd>$10 PWYC</dd></div>
-              </dl>
-              <p className="show-context">Lazer Beam is on tour from San Francisco.</p>
-              <p className="show-host">
-                Hosted by <a href="https://www.instagram.com/bughousepdx/" target="_blank" rel="noopener noreferrer">@bughousepdx <span aria-hidden="true">↗</span></a>
-              </p>
-              <p className="show-address">DM for address</p>
-            </div>
-            <a
-              className="show-flyer"
-              href="/images/october4th2026show.png"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="View the October 4 Bug House show flyer in full size"
-            >
-              <Image
-                src="/images/october4th2026show.png"
-                alt="October 4 Bug House show flyer featuring Live Alone, Lazer Beam, IC Double, and Warped Lines"
-                width={452}
-                height={601}
-                sizes="(max-width: 491px) calc(100vw - 2.5rem), (max-width: 700px) 452px, (max-width: 1050px) 37vw, 360px"
-              />
-            </a>
-          </article>
-        </section>
+        <ShowsSection />
 
         <section className="record" aria-labelledby="record-title">
           <div className="record-painting" aria-hidden="true">

@@ -231,6 +231,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   margin: 2rem var(--gutter) 4.5rem;
 }
 .shows h2 { margin-bottom: 1.5rem; font-size: 1rem; font-weight: 600; }
+.show-listings { display: grid; gap: clamp(4rem, 8vw, 7rem); }
 .show-listing {
   display: grid;
   grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
@@ -273,6 +274,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .show-address { color: var(--muted); }
 .show-flyer { display: block; width: 100%; }
 .show-flyer img { display: block; width: 100%; height: auto; }
+.shows-empty { color: var(--muted); font-size: .9rem; }
 
 /* The same painting appears at two scales: a brushwork detail and the intact cover. */
 .record { position: relative; overflow: hidden; isolation: isolate; }
@@ -498,9 +500,10 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .video-story { width: 100%; }
   .video-story summary { min-height: 44px; }
   .shows { margin-top: 1.5rem; margin-bottom: 3rem; }
-  .show-listing { grid-template-columns: 1fr; gap: 1.5rem; }
+  .show-listings { gap: 4.5rem; }
+  .show-listing { grid-template-columns: 1fr; gap: 2rem; }
   .show-details { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .show-flyer { width: min(100%, 452px); }
+  .show-flyer { width: min(82%, 340px); margin-inline: auto; }
   .record-content { padding: 3.5rem 0; }
   .record-cover { width: 80%; margin-right: 0; }
   .record-caption { margin: -1.5rem 3rem 0 1.25rem; padding: 1.5rem; max-width: calc(100% - 3rem); }
